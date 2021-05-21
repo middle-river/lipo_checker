@@ -17,12 +17,12 @@ void setup() {
 
 void loop() {
   uint32_t v = 0;	// [mV]
-  for (int i = 0; i < 1024; i++) {
+  for (int i = 0; i < 2048; i++) {
     v += analogRead(ADC_PIN);
   }
-  // v = (v / 1024) * 4.34 / 1024 * 1000;
-  v *= 4340;
-  v >>= 20;
+  // v = (v / 1024) * 4.34 / 2048 * 1000;
+  v *= 1085;
+  v >>= 19;
 
   lcd.buffer[7] = 13;	// V
   lcd.buffer[6] = 10;	// Space
